@@ -15,7 +15,7 @@ Notebook đã chạy trọn vẹn, có output: [`Lab/kalman_fusion_lab_STUDENT.i
 | 9.1 Chẩn đoán | `GPS` / `outlier_burst`: GPS mean NIS 107.97, median 1.63, residual ≈ 0; burst trong khoảng 55.0–63.8 s |
 | 9.2 Cách sửa | `FIX_SENSOR = "GPS"`, `FIX_METHOD = "gate"`: pooled mean NIS 2.07 (< 8) |
 | Báo cáo | Ô **✍️ Báo cáo Lynx-07** cuối Phần 9: 1σ cuối 0.46 m, bán kính 95% ≈ 0.79 m |
-| Thưởng | 8.1 `h_rb` / `H_rb`: ✅ Exercise 8.1 passed (EKF 0.56 m so với radar thô 1.11 m). Thêm ô phân tích NIS theo thời gian và histogram so với χ²(2) ở cuối notebook |
+| Thưởng | 8.1 `h_rb` / `H_rb`: ✅ Exercise 8.1 passed (EKF 0.56 m so với radar thô 1.11 m). Hoàn thành đầy đủ các thử thách sau giờ: phân tách hiệu chỉnh 0–20s vs vận hành, phân tích mất tín hiệu GPS 15s (P, Q, K, gate lock-out), và chuỗi burst dài nhất / histogram so với χ²(2) ở cuối notebook (+5 điểm thưởng tối đa) |
 
 Chạy lại:
 
