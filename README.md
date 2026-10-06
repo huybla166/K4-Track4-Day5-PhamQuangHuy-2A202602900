@@ -2,6 +2,31 @@
 
 Bài lab 120 phút: từ số đo nhiễu đến một bộ theo dõi hợp nhất LiDAR, radar và camera, viết bằng NumPy. Buổi lab kết thúc bằng nhiệm vụ chẩn đoán cảm biến cho xe tự hành **Lynx-07**. Mỗi học viên nhận một quỹ đạo và một lỗi cảm biến riêng, sinh từ `STUDENT_ID`.
 
+## Bài làm — Phạm Quang Huy · MSSV 2A202602900
+
+Notebook đã chạy trọn vẹn, có output: [`Lab/kalman_fusion_lab_STUDENT.ipynb`](Lab/kalman_fusion_lab_STUDENT.ipynb), với `STUDENT_ID = "2A202602900"`.
+
+| Mục | Kết quả |
+|:--|:--|
+| 5.1 `make_F`, `make_H` | ✅ Exercise 5.1 passed |
+| 5.2 `KalmanFilter.predict` / `update` | ✅ Exercise 5.2 passed: khớp `run_kf1d` tới sai số 1e-9 |
+| 6.1 `run_fusion` | ✅ Exercise 6.1 passed: track hợp nhất 0.109 m, tốt nhất đơn lẻ (radar) 0.234 m |
+| 7.1 `gated_update` | ✅ Exercise 7.1 passed: bắt 30/30 ghost, RMSE giảm từ 3.46 m xuống 0.28 m |
+| 9.1 Chẩn đoán | `GPS` / `outlier_burst`: GPS mean NIS 107.97, median 1.63, residual ≈ 0; burst trong khoảng 55.0–63.8 s |
+| 9.2 Cách sửa | `FIX_SENSOR = "GPS"`, `FIX_METHOD = "gate"`: pooled mean NIS 2.07 (< 8) |
+| Báo cáo | Ô **✍️ Báo cáo Lynx-07** cuối Phần 9: 1σ cuối 0.46 m, bán kính 95% ≈ 0.79 m |
+| Thưởng | 8.1 `h_rb` / `H_rb`: ✅ Exercise 8.1 passed (EKF 0.56 m so với radar thô 1.11 m). Thêm ô phân tích NIS theo thời gian và histogram so với χ²(2) ở cuối notebook |
+
+Chạy lại:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate                # macOS/Linux: source .venv/bin/activate
+pip install numpy matplotlib scipy jupyter ipywidgets
+cd Lab
+jupyter notebook kalman_fusion_lab_STUDENT.ipynb   # Kernel → Restart & Run All
+```
+
 ## Cấu trúc
 
 | File | Ai dùng | Ghi chú |
